@@ -1,0 +1,28 @@
+{
+    "type": "project",
+    "description": "Levart Teknologi Test Backend Developer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tioreza Febrian",
+            "email": "tiorezafk@outlook.com"
+        }
+    ],
+
+    "require": {
+        "bramus/router": "^1.6",
+        "vlucas/phpdotenv": "^5.5",
+        "bshaffer/oauth2-server-php": "^1.10",
+        "rakit/validation": "^1.4",
+        "phpmailer/phpmailer": "^6.7"
+    },
+
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }        
+    }
+}

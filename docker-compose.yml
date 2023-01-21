@@ -1,0 +1,29 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    container_name: postgres_db
+    env_file:
+      - .env
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: email_app
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: bismilah123
+    volumes:
+      - ./script/:/docker-entrypoint-initdb.d
+      - "./pgdata:/var/lib/postgresql/data/pgdata"
+    ports:
+      - "5432:5432"
+  php:
+   build:
+     context: ./
+     dockerfile: Dockerfile
+   image: email_app
+   ports:
+     - "8080:9000"
+   container_name: php_engine
+   volumes:
+     - ./:/var/www/html
+   environment:
+     CONTAINER_ROLE: app

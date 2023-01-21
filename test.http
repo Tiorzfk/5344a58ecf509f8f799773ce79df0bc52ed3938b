@@ -1,0 +1,63 @@
+
+### POST get token from client credentials grant type
+POST http://127.0.0.1:8080/api/token
+Accept: application/json
+Content-Type: application/json
+
+{
+    "grant_type": "authorization_code",
+    "client_id": "amazingClientId",
+    "client_secret": "amazingClientSecret",
+    "code": "c9d0c5834f4287dbee93a0d82f5b7a1472decf86"
+}
+
+### POST register users
+POST http://127.0.0.1:8080/api/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "username": "tiorzfk",
+    "email": "tiorezafk@outlook.com",
+    "password": "asdasd",
+    "first_name": "Tioreza",
+    "last_name": "Febrian"
+}
+
+### POST login users
+POST http://127.0.0.1:8080/api/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "tiorezafk@outlook.com",
+    "password": "asdasd",
+    "client_id": "amazingClientId",
+    "response_type": "code",
+    "state": "xyz"
+}
+
+### POST send mail
+POST http://127.0.0.1:8080/api/mail/send
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 89f4eaabd9f510511a69d47721d6cc5f45e82b74
+
+{
+   "mail_to": "tiorezafk@outlook.com", 
+   "mail_from": "tiorezafebrian@gmail.com", 
+   "subject": "Test", 
+   "body": "test body"
+}
+
+### GET check status send mail
+GET http://127.0.0.1:8080/api/mail/status/2
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 3d525c7080ffff288c5955bee4c2b1bf21f6718c
+
+### POST run worker send mail
+POST http://127.0.0.1:8080/api/mail/run
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 3d525c7080ffff288c5955bee4c2b1bf21f6718c
