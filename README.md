@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 *statusSendMail* |  [ **POST** | /api/mail/status/:id | param = id send email, endpoint for checking status sending email
 *registerApi* | [ **POST** | /api/register | param = username email password first_name last_name
 *loginApi* | [ **POST** | /api/login | param = email password, endpoint for verify the user and get auth code
+*runWorker* | [ **POST** | /api/mail/run | run worker mail with cron
 
 
 ## Flow System Design
